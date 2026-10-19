@@ -1,0 +1,160 @@
+/* **********************************************************
+ * theme.css — editorial look (ref: signal-a.studio)
+ *
+ * everything for this look lives in this one file.
+ * to undo, remove the line  @import "theme.css";  in styles.css
+ * ********************************************************** */
+
+/* serif display + mono labels, free stand-ins for
+ * PP Editorial New and GT America Mono */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-size-mono: 0.7rem;
+
+  /* black on white, links stay black and fade on hover */
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --color-header-bg: #ffffff;
+  --color-link: var(--color-0);
+  --color-link-hover: #8a8a8a;
+  --color-nav-link: var(--color-0);
+  --color-nav-link-hover: #8a8a8a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+b {
+  font-weight: 600;
+}
+
+/* **********************************************************
+ * mono labels: menu, tabs, small labels, captions, footer
+ * ********************************************************** */
+
+.main__nav-bar ul li,
+.main__nav-bar ul li a,
+.prev__next ul li a,
+.sidebar__item,
+figcaption p,
+.type__content p.p__size-s.font__weight-700,
+.type__content h3.p__size-m {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+figcaption p,
+figcaption p b {
+  font-style: normal;
+  color: #6a6a6a;
+}
+
+/* small labels sit under a thin rule, like the ref's section markers */
+.type__content p.p__size-s.font__weight-700 {
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--color-0);
+}
+
+/* experiment step labels (Approach, Process...) */
+.type__content h3.p__size-m {
+  padding-top: 0.35rem;
+}
+
+/* **********************************************************
+ * serif headings
+ * ********************************************************** */
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+#intro h1 {
+  font-size: clamp(2.75rem, 8vw, 6.5rem);
+}
+
+h2 {
+  font-size: 2.25rem;
+  padding-top: var(--spacing-s);
+  border-top: 1px solid var(--color-0);
+}
+
+/* when a mono label already carries the rule, the heading doesn't */
+p.p__size-s.font__weight-700 + h2 {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* work titles on week 2 */
+.type__content h3:not(.p__size-m) {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+/* **********************************************************
+ * section tabs
+ * ********************************************************** */
+
+.sidebar .sidebar__item {
+  font-size: var(--font-size-mono);
+  border-left: none;
+  padding-left: 0;
+}
+
+.sidebar .sidebar__item.active {
+  font-weight: 500;
+}
+
+.sidebar .sidebar__item.active::before {
+  content: "→ ";
+}
+
+/* **********************************************************
+ * flow diagrams (week 5): outlined box instead of grey fill
+ * ********************************************************** */
+
+figure.color__bg-3 {
+  background: transparent !important;
+  border: 1px solid var(--color-0);
+}
+
+figure.color__bg-3 > p {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-s);
+}
+
+/* **********************************************************
+ * overview list
+ * ********************************************************** */
+
+.weekly h2 {
+  font-size: var(--font-size-l);
+}
+
+.weekly ul li a {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+}
+
+@media (orientation: portrait) {
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .type__content h3:not(.p__size-m) {
+    font-size: 1.4rem;
+  }
+}

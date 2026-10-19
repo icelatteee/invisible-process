@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 4 — Body Language. Creative Process Journal, 24-25.</title>
+
+    <!-- Meta information, for machines to read, SEO -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Week 4 — Body Language" />
+    <meta name="Author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.png" />
+
+    <!-- Load StyleSheets -->
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+  </head>
+
+  <body>
+
+    <!-- header and footer section, the menu. -->
+    <header>
+      <nav class="main__nav-bar">
+        <ul class="main__nav-title">
+          <li><a href="../../index.html">Project Title</a></li>
+          <li class="mobile__hide"><a href="../../about/index.html">Your Name</a></li>
+        </ul>
+        <ul class="main__nav-list">
+          <li class="main__nav-item"><a href="../../index.html">overview</a></li>
+          <li class="main__nav-item"><a href="../../repository/index.html">repository</a></li>
+          <li class="main__nav-item"><a href="../../about/index.html">about</a></li>
+          <li class="main__nav-about">
+            <p>
+              A design communication graduation project.
+            </p>
+          </li>
+        </ul>
+        <div class="main__nav-ham">
+          <span class="main__nav-ham-bar"></span>
+          <span class="main__nav-ham-bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main section, all your content goes here. -->
+    <main>
+
+      <article>
+
+        <!-- entry title -->
+        <section id="intro">
+          <div class="width__s margin__auto padding__top-xl padding__bottom-l">
+            <div class="row type__content">
+              <div class="column">
+                <p class="p__size-s font__weight-700">Week 4 · Semester 1</p>
+                <h1 class="font__size-xl margin__top-s">Body Language</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- body: section tabs on the left, content on the right -->
+        <div id="contents" class="row width__xl margin__auto padding__x-m">
+          <aside class="sidebar">
+            <ul>
+              <li><a href="#trigger-reframe" class="sidebar__item">Trigger / Reframe</a></li>
+              <li><a href="#kerning-round-2" class="sidebar__item">Kerning, Round 2</a></li>
+              <li><a href="#compared-to-alphago" class="sidebar__item">Compared to AlphaGo</a></li>
+              <li><a href="#feedback" class="sidebar__item">Feedback</a></li>
+              <li><a href="#moving-forward" class="sidebar__item">Moving Forward</a></li>
+            </ul>
+          </aside>
+
+          <div class="column">
+
+            <!-- trigger -->
+            <section id="trigger">
+              <div class="width__s margin__auto padding__bottom-l">
+                <div class="row type__content">
+                  <div class="column">
+                    <h2 id="trigger-reframe">Trigger / Reframe</h2>
+                    <p>
+                      Mind-mapping human-machine interaction this week brought me to an unexpected realization:
+                      what fundamentally separates collaborating with a machine from working with a human is the
+                      absence of body language.
+                    </p>
+                    <p>
+                      In my mapping, "gestures and motion" emerged as a missing sensory channel alongside code,
+                      text chat, speech, and visuals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="mindmaps">
+              <figure class="width__l margin__auto margin__y-m">
+                <div class="row margin__x-m">
+                  <img src="../../assets/images/week-4/mindmap_1.jpg" class="zoom" alt="Mind map 1" />
+                </div>
+                <div class="row margin__x-m margin__top-m">
+                  <ul>
+                    <li><img src="../../assets/images/week-4/mindmap_2.jpg" class="zoom" alt="Mind map 2" /></li>
+                    <li><img src="../../assets/images/week-4/mindmap_3.jpg" class="zoom" alt="Mind map 3" /></li>
+                  </ul>
+                </div>
+                <figcaption class="margin__x-m"><p><b>Mind maps</b> human-machine interaction. Click to enlarge.</p></figcaption>
+              </figure>
+            </section>
+
+        
+
+            <!-- experiment -->
+            <section id="experiment-kerning">
+              <div class="width__s margin__auto padding__y-l">
+                <div class="row type__content">
+                  <div class="column">
+                    <p class="p__size-s font__weight-700">Experiment</p>
+                    <h2 id="kerning-round-2" class="margin__top-s">Kerning, Round 2</h2>
+                  </div>
+                </div>
+
+                <section>
+              <figure class="video margin__m">
+                <video class="lazy img__cover-50" autoplay muted playsinline loop preload="none" width="100%" poster="">
+                  <source data-src="../../assets/images/week-4/kerning-experiment-v2.mp4" type="video/mp4" />
+                </video>
+                <figcaption><p><b>Kerning experiment v2</b> screen recording of round 2.</p></figcaption>
+              </figure>
+            </section>
+
+                <div class="row type__content">
+                  <div class="column">
+                    <h3 class="p__size-m font__weight-700 margin__bottom-s">Approach</h3>
+                  </div>
+                  <div class="column__double">
+                    <p>
+                      I built a baseline reinforcement-learning agent to kern letter pairs against a computed
+                      reward, manually overriding its adjustments across repeated rounds. I wanted to learn the
+                      mechanics of the algorithm, test what a system understands about a nuanced craft skill
+                      like typography, and observe what "working with" an AI actually feels like.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row type__content">
+                  <div class="column">
+                    <h3 class="p__size-m font__weight-700 margin__bottom-s">Process &amp; Observations</h3>
+                  </div>
+                  <div class="column__double">
+                    <p>
+                      In the first pass, a squished preview box distorted my perception, causing the agent to
+                      set everything far too tight. Yet, that bug produced a surprising visual result because my
+                      own visibility was compromised. In the second pass, after fixing the display bug, the
+                      agent appeared to "fight back" against my adjustments.
+                    </p>
+                    <p>Ultimately, I realized there was no genuine resistance:</p>
+                    <ul>
+                      <li><p class="margin__bottom-s">— The interaction lacked friction—the system simply calculated against modified inputs without understanding my intent.</p></li>
+                      <li><p class="margin__bottom-s">— I never understood why the agent chose specific values.</p></li>
+                      <li><p class="margin__bottom-s">— Because there was no shared dialogue, I defaulted to pushing my own judgment through rather than negotiating.</p></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="kerning-videos">
+              <div class="width__l margin__auto margin__y-m">
+                <div class="row margin__x-m">
+                  <ul>
+                    <li>
+                      <figure>
+                        <video class="lazy" autoplay muted playsinline loop preload="none" width="100%" poster="">
+                          <source data-src="../../assets/images/week-4/fo-kerning.mp4" type="video/mp4" />
+                        </video>
+                        <figcaption><p><b>"Fo"</b> kerning pair</p></figcaption>
+                      </figure>
+                    </li>
+                    <li>
+                      <figure>
+                        <video class="lazy" autoplay muted playsinline loop preload="none" width="100%" poster="">
+                          <source data-src="../../assets/images/week-4/wa-kerning.mp4" type="video/mp4" />
+                        </video>
+                        <figcaption><p><b>"Wa"</b> kerning pair</p></figcaption>
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- reflection -->
+            <section id="comparing-to-alphago">
+              <div class="width__s margin__auto padding__y-l">
+                <div class="row type__content">
+                  <div class="column">
+                    <h2 id="compared-to-alphago">Comparing This to AlphaGo</h2>
+                    <p>
+                      The kerning agent never truly learned; it simply responded to the immediate constraints of
+                      each round. Unlike AlphaGo, which generated transformative breakthroughs like Move 37 by
+                      repeatedly playing against itself and refining its internal model over thousands of
+                      iterations, this agent remained completely static between rounds. There was no cumulative
+                      intelligence or self-correction happening under the hood—it didn't get smarter, more
+                      consistent, or more nuanced in its understanding of spatial relationships the more it was
+                      corrected.
+                    </p>
+                    <p>
+                      When it "fought back" in round two, it wasn't displaying genuine resistance or novel
+                      stylistic conviction, but merely executing its fixed calculation logic against modified
+                      inputs.
+                    </p>
+                    <p>
+                      Because it couldn't build an evolving, grounded perspective from iterative feedback, its
+                      outputs never moved beyond basic exploratory adjustments into the realm of truly
+                      surprising or transformational design.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row type__content">
+                  <div class="column">
+                    <h2 id="feedback">Feedback Breakdown (Consultation, Thursday)</h2>
+                    <p>
+                      Speaking with my supervisor on Thursday finally gave me some clear boundaries to anchor
+                      the project. The overall scope is officially locked across three core pillars:
+                      <b>Interaction Design, AI-Assisted Creativity, and Creative Practices.</b> I'm defining my
+                      domain of Interaction Design specifically through HCI for now, which gives me a much more
+                      grounded framework to evaluate human-machine collaboration.
+                    </p>
+                    <p>
+                      However, the feedback on my recent experiment design hit hard. My supervisor kept
+                      repeating that the setup was way too serious and niche—that "not everyone would appreciate
+                      or understand it." Looking back, I can see where that came from. I got so caught up in
+                      setting up a rigid testing structure that I ended up stripping away the playfulness. Going
+                      into Week 5, I need to figure out how to pivot these experiments so they feel more
+                      accessible and engaging, without losing the critical inquiry underneath.
+                    </p>
+                    <p>
+                      Moving forward, if I'm genuinely investigating AI as a collaborator rather than just a
+                      utility tool, I have to learn to catch myself when I try to force the outcome. I need to
+                      give the system enough room to push back, even if sitting in that uncertainty feels deeply
+                      uncomfortable.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row type__content">
+                  <div class="column">
+                    <h2 id="moving-forward">Moving Forward</h2>
+                    <ul>
+                      <li><p class="margin__bottom-s">— Follow up on The Creative Mind (pending confirmation above).</p></li>
+                      <li><p class="margin__bottom-s">— Decide how to respond to the "too niche/serious" feedback before the next experiment.</p></li>
+                      <li><p class="margin__bottom-s">— Carry the gesture/body-language throughline into the next round — this looks like the actual seed of where the project is heading.</p></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </article>
+    </main>
+
+    <!-- footer, page ends here.-->
+    <footer>
+      <div class="prev__next">
+        <ul>
+          <li><a href="./week-3.html" id="go-prev">prev</a></li>
+          <li><a href="../../index.html">overview</a></li>
+          <li><a href="./week-5.html" id="go-next">next</a></li>
+        </ul>
+      </div>
+      <div class="scroll__top"><a href="javascript:scrollToTop();">↑</a></div>
+    </footer>
+
+    <div id="lightbox"></div>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>
