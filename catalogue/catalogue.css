@@ -1,0 +1,744 @@
+/* Catalogue of Making: styles shared by the overview and every experiment page */
+/* the trail: index list of experiments, same feel as the weekly list */
+      .trail ul li {
+        border-bottom: 1px solid var(--color-0);
+      }
+      .trail ul li:first-child {
+        border-top: 1px solid var(--color-0);
+      }
+      .trail ul li a {
+        display: flex;
+        gap: var(--spacing-s);
+        align-items: baseline;
+        padding: var(--spacing-xs);
+        color: var(--color-0);
+        transition: padding-left 0.3s;
+      }
+      .trail ul li a:hover {
+        padding-left: var(--spacing-s);
+      }
+      .trail__no,
+      .trail__group,
+      .tag {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .trail__no {
+        width: 2rem;
+        flex-shrink: 0;
+      }
+      .trail__title {
+        font-family: var(--font-serif);
+        font-size: 1.75rem;
+        flex: 1;
+      }
+      .trail__group {
+        color: #6a6a6a;
+        text-align: right;
+      }
+      .trail__turn .trail__title::after {
+        content: "  ← turning point";
+        font-family: var(--font-mono);
+        font-size: var(--font-size-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      /* the question each experiment asks */
+      .question {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.75rem;
+        line-height: 1.2;
+      }
+
+      /* input → output line */
+      .io {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #6a6a6a;
+      }
+
+      /* gesture maps */
+      table.map {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: var(--spacing-m);
+      }
+      table.map th,
+      table.map td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.5rem 0.75rem 0.5rem 0;
+        border-bottom: 1px solid var(--color-3);
+        font-size: var(--font-size-s);
+        line-height: 1.4;
+      }
+      table.map th {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-mono);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid var(--color-0);
+      }
+      table.map code,
+      p code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+      }
+
+      /* code excerpts */
+      pre.code {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        line-height: 1.6;
+        padding: var(--spacing-s);
+        border: 1px solid var(--color-0);
+        overflow-x: auto;
+        white-space: pre;
+        margin-bottom: var(--spacing-xs);
+      }
+
+      /* the "led to" line that links one experiment to the next */
+      .led-to {
+        padding-top: var(--spacing-xs);
+        border-top: 1px solid var(--color-0);
+      }
+      .led-to a {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        color: var(--color-0);
+      }
+      .led-to a:hover {
+        color: var(--color-link-hover);
+      }
+
+      /* "me" / "AI" labels on the 02 strip */
+      .tag {
+        display: inline-block;
+        padding: 0.1rem 0.4rem;
+        border: 1px solid var(--color-0);
+        margin-right: 0.35rem;
+      }
+      .tag--me {
+        background: var(--color-0);
+        color: var(--color-1);
+      }
+
+      /* the two rules */
+      .rules li {
+        display: flex;
+        gap: var(--spacing-s);
+        padding: var(--spacing-s) 0;
+        border-top: 1px solid var(--color-0);
+      }
+      .rules li:last-child {
+        border-bottom: 1px solid var(--color-0);
+      }
+      .rules__no {
+        font-family: var(--font-serif);
+        font-size: 2.25rem;
+        line-height: 1;
+        width: 2.5rem;
+        flex-shrink: 0;
+      }
+
+      /* placeholder for media that's still coming */
+      .pending {
+        border: 1px dashed var(--color-3);
+        padding: var(--spacing-l) var(--spacing-m);
+        text-align: center;
+      }
+      .pending p {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #6a6a6a;
+      }
+
+      /* small portrait clips sit in rows of 3 or 4 */
+      .clips > ul > li {
+        min-width: 9rem;
+      }
+
+      /* h2 anchors already have scroll-margin; give section labels the same */
+      section[id] {
+        scroll-margin-top: calc(var(--header__height) + var(--spacing-m));
+      }
+
+      @media (orientation: portrait) {
+        .trail__group {
+          display: none;
+        }
+        .trail__title,
+        .question {
+          font-size: 1.35rem;
+        }
+      }
+
+/* ==========================================================
+ * experiment pages: the title is the page's h1
+ * ========================================================== */
+.exp h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: var(--spacing-m);
+}
+
+/* ==========================================================
+ * overview network (ref: dots + lines inside, thumbnails around)
+ * ========================================================== */
+.net__scroll {
+  overflow-x: auto;
+}
+.net__svg {
+  display: block;
+  width: 100%;
+  min-width: 860px;
+  height: auto;
+}
+.net .edge {
+  stroke: #9a9a9a;
+  stroke-width: 1;
+  transition: stroke 0.3s, opacity 0.3s;
+}
+.net .edge--link {
+  stroke-dasharray: 3 4;
+}
+.net .node__dot {
+  fill: var(--color-bg);
+  stroke: var(--color-0);
+  stroke-width: 1;
+  transition: fill 0.3s;
+}
+.net .node__label,
+.net .node__pending {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  fill: var(--color-0);
+}
+.net .node__pending {
+  fill: #8a8a8a;
+}
+.net .node__frame {
+  fill: none;
+  stroke: var(--color-0);
+  stroke-width: 0.75;
+}
+.net .node__frame--pending {
+  stroke: #9a9a9a;
+  stroke-dasharray: 3 3;
+}
+.net image {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out, opacity 0.3s;
+}
+.net .node,
+.net .node * {
+  transition: opacity 0.3s;
+}
+.net .node:hover image,
+.net .node:focus image {
+  filter: grayscale(0%);
+}
+.net .node:hover .node__dot,
+.net .node:focus .node__dot {
+  fill: var(--color-0);
+}
+/* focus mode: everything fades except the hovered experiment and its links */
+.net.is-focus .edge {
+  opacity: 0.15;
+}
+.net.is-focus .edge.is-on {
+  opacity: 1;
+  stroke: var(--color-0);
+}
+.net.is-focus .node {
+  opacity: 0.25;
+}
+.net.is-focus .node.is-on {
+  opacity: 1;
+}
+.net__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-m);
+  padding: var(--spacing-s) 0;
+  border-top: 1px solid var(--color-0);
+}
+.net__legend,
+.net__info {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.net__info {
+  text-align: right;
+  max-width: 60%;
+}
+.key {
+  display: inline-block;
+  width: 1.75rem;
+  margin: 0 0.4rem 0.2rem 0.75rem;
+  border-top: 1px solid #9a9a9a;
+  vertical-align: middle;
+}
+.key:first-child {
+  margin-left: 0;
+}
+.key--link {
+  border-top-style: dashed;
+}
+@media (orientation: portrait) {
+  .net__foot {
+    flex-direction: column;
+  }
+  .net__info {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+.net .node__caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  fill: #6a6a6a;
+}
+.net .node:hover .node__caption,
+.net .node:focus .node__caption {
+  fill: var(--color-0);
+}
+
+/* rows of portrait clips: cap the width so they don't fill the whole screen */
+figure > .clips {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+figure > .clips + figcaption,
+figure > .clips ~ figcaption {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* keep the whole network in view on a laptop screen */
+.net {
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+/* moving network: grab to drag */
+.net .node {
+  cursor: grab;
+  touch-action: none;
+}
+.net__svg.is-dragging,
+.net__svg.is-dragging .node {
+  cursor: grabbing;
+}
+.net__svg.is-dragging image {
+  filter: grayscale(0%);
+}
+
+/* ==========================================================
+ * v3: network as the opening view, scattered thumbnails
+ * ========================================================== */
+.net--hero {
+  max-width: none;
+  padding: 0 var(--spacing-m);
+}
+.net--hero .net__svg {
+  width: 100%;
+  height: calc(100vh - var(--header__height) - 3.25rem);
+  min-height: 560px;
+}
+.net--hero .net__foot {
+  padding: var(--spacing-xs) 0;
+}
+
+/* each thumbnail is a small window: title bar + image */
+.net .node__bar {
+  fill: var(--color-bg);
+  stroke: var(--color-0);
+  stroke-width: 0.75;
+}
+.net .node:hover .node__bar,
+.net .node.is-on .node__bar {
+  fill: var(--color-0);
+}
+.net .node__bartext {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  fill: var(--color-0);
+  pointer-events: none;
+}
+.net .node:hover .node__bartext,
+.net .node.is-on .node__bartext {
+  fill: var(--color-bg);
+}
+.net .node--l .node__bartext {
+  font-size: 11px;
+}
+.net .node__bg {
+  fill: var(--color-bg);
+}
+
+/* the reason sits on the line */
+.net .edge-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  fill: #8a8a8a;
+  paint-order: stroke;
+  stroke: var(--color-bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: opacity 0.3s, fill 0.3s;
+}
+.net.is-focus .edge-label {
+  opacity: 0.1;
+}
+.net.is-focus .edge-label.is-on {
+  opacity: 1;
+  fill: var(--color-0);
+}
+
+@media (orientation: portrait) {
+  .net--hero {
+    padding: 0;
+  }
+  .net--hero .net__svg {
+    height: auto;
+    min-height: 0;
+    min-width: 1000px;
+  }
+}
+
+/* ==========================================================
+ * v4: linear Semester 1 flow (ref: alda catalogue of making)
+ * ========================================================== */
+.flow {
+  padding: var(--spacing-l) var(--spacing-m) var(--spacing-xl);
+}
+.flow__head {
+  max-width: 72rem;
+  margin: 0 auto var(--spacing-l);
+}
+
+.flow__item {
+  max-width: 72rem;
+  margin: 0 auto;
+  scroll-margin-top: calc(var(--header__height) + var(--spacing-m));
+}
+
+/* text on one side, the main visual on the other; sides alternate */
+.flow__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-m);
+  align-items: start;
+}
+.flow__text { grid-column: 1 / span 5; grid-row: 1; }
+.flow__hero { grid-column: 6 / span 7; grid-row: 1; }
+.flow__item--flip .flow__text { grid-column: 8 / span 5; }
+.flow__item--flip .flow__hero { grid-column: 1 / span 7; }
+
+/* medium: a smaller visual, more room for the words */
+.flow__item--m .flow__text { grid-column: 1 / span 6; }
+.flow__item--m .flow__hero { grid-column: 8 / span 5; }
+.flow__item--m.flow__item--flip .flow__text { grid-column: 7 / span 6; }
+.flow__item--m.flow__item--flip .flow__hero { grid-column: 1 / span 5; }
+
+/* extra large: the visual takes the whole width, text below in two columns */
+.flow__item--xl .flow__hero,
+.flow__item--xl.flow__item--flip .flow__hero { grid-column: 1 / -1; grid-row: 1; }
+.flow__item--xl .flow__text,
+.flow__item--xl.flow__item--flip .flow__text { grid-column: 1 / span 7; grid-row: 2; }
+
+/* Prototype 1: the biggest thing on the page, edge to edge */
+.flow__item--full {
+  max-width: none;
+}
+.flow__item--full .flow__hero,
+.flow__item--full.flow__item--flip .flow__hero {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0 calc(-1 * var(--spacing-m));
+}
+.flow__item--full .flow__text,
+.flow__item--full.flow__item--flip .flow__text {
+  grid-column: 3 / span 8;
+  grid-row: 2;
+}
+.flow__item--full .flow__pending {
+  min-height: 80vh;
+}
+
+.flow__meta {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--color-0);
+  margin-bottom: var(--spacing-s) !important;
+}
+.flow__no {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  letter-spacing: 0;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.flow__text h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+.flow__text .question {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-s);
+}
+.flow__text > p:not(.question):not(.flow__meta):not(.io) {
+  font-size: 0.95rem;
+}
+.flow__text .io {
+  margin-top: var(--spacing-s);
+}
+.flow__code {
+  margin-top: var(--spacing-s);
+}
+.flow__code .code {
+  font-size: 0.72rem;
+}
+.flow__more {
+  display: inline-block;
+  margin-top: var(--spacing-s);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-0);
+  border-bottom: 1px solid var(--color-0);
+}
+
+/* the smaller visuals sit in a row under the main one */
+.flow__support {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-m);
+}
+.flow__item--l .flow__support,
+.flow__item--m .flow__support {
+  max-width: 58%;
+  margin-left: auto;
+}
+.flow__item--flip.flow__item--l .flow__support,
+.flow__item--flip.flow__item--m .flow__support {
+  margin-left: 0;
+  margin-right: auto;
+}
+.flow__support figure video,
+.flow__support figure img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.flow__pending {
+  border: 1px dashed var(--color-3);
+  min-height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flow__pending p {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6a6a6a;
+}
+
+/* the "led to" link between experiments: how one flows into the next */
+.flow__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: var(--spacing-xs) 0;
+}
+.flow__line {
+  display: block;
+  width: 1px;
+  height: var(--spacing-l);
+  background: var(--color-0);
+}
+.flow__link a {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--color-0);
+  padding: var(--spacing-s) 0;
+}
+.flow__link a:hover {
+  color: var(--color-link-hover);
+}
+.flow__led {
+  display: block;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+/* p5.js live preview */
+.tryit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-top: var(--spacing-s);
+}
+.tryit__btn {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.8rem;
+  background: var(--color-0);
+  color: var(--color-bg);
+  border: 1px solid var(--color-0);
+  cursor: pointer;
+}
+.tryit__btn:hover {
+  background: var(--color-bg);
+  color: var(--color-0);
+}
+.tryit a,
+.tryit__note {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tryit a {
+  color: var(--color-0);
+}
+.tryit__note {
+  color: #8a8a8a;
+}
+.tryit__frame {
+  flex-basis: 100%;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-0);
+  margin-top: var(--spacing-xs);
+}
+
+@media (max-width: 900px), (orientation: portrait) {
+  .flow__grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .flow__hero { order: -1; width: 100%; }
+  .flow__item--full .flow__hero { margin: 0 calc(-1 * var(--spacing-m)); width: auto; }
+  .flow__item--l .flow__support,
+  .flow__item--m .flow__support {
+    max-width: none;
+  }
+}
+
+.flow__head p {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--color-0);
+}
+.flow__item--xl .flow__hero video,
+.flow__item--xl .flow__hero img {
+  max-height: 78vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+ * v5: single scroll, context only (no question / reflection)
+ * ========================================================== */
+.flow__io {
+  margin-bottom: var(--spacing-s) !important;
+  color: var(--color-0) !important;
+}
+.flow__text .map {
+  margin-top: var(--spacing-s);
+}
+.flow__p5 {
+  display: inline-block;
+  margin-top: var(--spacing-s);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-0);
+  border-bottom: 1px solid var(--color-0);
+}
+.flow__p5:hover {
+  color: var(--color-link-hover);
+  border-color: var(--color-link-hover);
+}
+
+/* supporting visuals now sit under the main one, in the same column */
+.flow__hero .flow__support,
+.flow__item--l .flow__hero .flow__support,
+.flow__item--m .flow__hero .flow__support,
+.flow__item--flip .flow__hero .flow__support {
+  max-width: none;
+  margin: var(--spacing-s) 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+.flow__item--xl .flow__hero video,
+.flow__item--xl .flow__hero img {
+  max-height: none;
+  object-fit: initial;
+}
+.flow__item--xl .flow__main video,
+.flow__item--xl .flow__main img {
+  max-height: 78vh;
+  width: 100%;
+  object-fit: cover;
+}
+.flow__item--xl .flow__support video,
+.flow__item--xl .flow__support img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.flow__item--full .flow__hero {
+  margin: 0;
+}
+.flow__item--full .flow__main {
+  margin: 0 calc(-1 * var(--spacing-m));
+}
